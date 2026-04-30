@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | BENARICHA Abdalah</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e1e8ed;
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .exp-item, .edu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BENARICHA Abdalah</h1>
+        <p>Étudiant en Informatique et Réseaux (BTS CIEL)</p>
+    </header>
+
+    <div class="container">
+        <!-- Colonne Gauche -->
+        <aside>
+            <section class="contact-info">
+                <h2>Contact</h2>
+                <p>📞 +33 7 81 30 82 38</p>
+                <p>📧 Abdbenaricha@hotmail.com</p>
+                <p>📍 Marseille, France</p>
+                <p>🚗 Permis B, véhiculé</p>
+            </section>
+
+            <section>
+                <h2>Compétences</h2>
+                <span class="badge">Esprit d'équipe</span>
+                <span class="badge">Curieux</span>
+                <span class="badge">Polyvalent</span>
+                <span class="badge">Créativité</span>
+                
+                <h3>Langues</h3>
+                <p>Anglais : B2<br>Espagnol : A1</p>
+            </section>
+
+            <section>
+                <h2>Logiciels & Tech</h2>
+                <div class="badge">Python</div>
+                <div class="badge">HTML/CSS</div>
+                <div class="badge">Java / C</div>
+                <div class="badge">VS Code</div>
+                <div class="badge">Microsoft 365</div>
+                <div class="badge">Cisco Packet Tracer</div>
+                <div class="badge">Unity / Roblox Studio</div>
+            </section>
+
+            <section>
+                <h2>Loisirs</h2>
+                <ul>
+                    <li>Développement informatique</li>
+                    <li>Badminton</li>
+                    <li>Randonnée</li>
+                    <li>Voyage</li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Colonne Droite -->
+        <main>
+            <section>
+                <h2>Profil Professionnel</h2>
+                <p>Étudiant en 1re année de BTS CIEL, je recherche un stage de 6 à 8 semaines à partir du <strong>18 mai 2026</strong>. Passionné par la cybersécurité, le développement et l'électronique, je possède des bases solides en programmation et maintenance informatique.</p>
+            </section>
+
+            <section>
+                <h2>Expériences Professionnelles</h2>
+                
+                <div class="exp-item">
+                    <span class="date">Février - Août 2025</span>
+                    <span class="job-title">Employé Polyvalent - DECATHLON (Ensuès-la-Redonne)</span>
+                    <ul>
+                        <li>Utilisation du logiciel AS400</li>
+                        <li>Planification de l'activité des équipes</li>
+                        <li>Utilisation de chariot de manutention (CACES 3)</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <span class="date">Décembre 2024 - Août 2025</span>
+                    <span class="job-title">Vendeur</span>
+                    <ul>
+                        <li>Gestion de caisse et inventaire</li>
+                        <li>Création de site web et gestion des réseaux sociaux</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <span class="date">Janvier 2022 - Février 2023</span>
+                    <span class="job-title">Stage Mentorat - Association CAMPLUS</span>
+                    <ul>
+                        <li>Formation au mentorat</li>
+                        <li>Suivi scolaire d'un collégien pour le brevet</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formations</h2>
+                <div class="edu-item">
+                    <span class="date">2025 - 2027</span>
+                    <strong>BTS CIEL (Informatique et réseaux)</strong>
+                </div>
+                <div class="edu-item">
+                    <span class="date">2024 - 2025</span>
+                    <strong>Licence Informatique</strong>
+                </div>
+                <div class="edu-item">
+                    <span class="date">2021 - 2024</span>
+                    <strong>Baccalauréat Général Scientifique</strong>
+                </div>
+                <div class="edu-item">
+                    <span class="date">2022 - 2023</span>
+                    <strong>Coding Club - EPITECH</strong>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; BENARICHA Abdalah - Recherche de stage Mai 2026</p>
+    </footer>
+
+</body>
+</html>
