@@ -3,225 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | BENARICHA Abdalah</title>
+    <title>Abdalah BENARICHA - Technicien Informatique & Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --accent-hover: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 3rem;
+        }
+
+        /* Header / Banner */
         header {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 4rem 1.5rem 3rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .subtitle {
+            font-size: 1.25rem;
+            color: #93c5fd;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #ffffff;
+        }
+
+        /* Container Layout */
+        .main-container {
+            max-width: 1100px;
+            margin: 2.5rem auto 0;
+            padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 2fr 1fr;
             gap: 2rem;
         }
 
-        @media (max-width: 768px) {
-            .container {
+        @media (max-width: 850px) {
+            .main-container {
                 grid-template-columns: 1fr;
             }
         }
 
+        /* Section Styling */
         section {
-            background: white;
-            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.75rem;
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-lg);
         }
 
         h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-
-        .contact-info p {
-            margin: 0.5rem 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
+            gap: 0.6rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
         }
 
-        .badge {
+        h2::before {
+            content: '';
             display: inline-block;
-            background: #e1e8ed;
-            padding: 0.3rem 0.8rem;
-            margin: 0.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent);
+            border-radius: 2px;
         }
 
-        .exp-item, .edu-item {
-            margin-bottom: 1.5rem;
+        /* Profil */
+        .profile-text {
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
-        .date {
-            font-weight: bold;
-            color: var(--secondary-color);
-            display: block;
+        /* Timeline / Expériences */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border);
+            margin-bottom: 1.75rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            border: 2px solid var(--card-bg);
         }
 
         .job-title {
-            font-weight: bold;
             font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .job-company {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .job-details {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .job-details li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .job-details li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Skills Badges Group */
+        .skill-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        /* Formations & Langues */
+        .edu-item {
+            margin-bottom: 1rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .lang-list {
+            list-style: none;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.95rem;
+        }
+
+        .lang-item:last-child {
+            border-bottom: none;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            background: var(--primary-color);
-            color: white;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>BENARICHA Abdalah</h1>
-        <p>Étudiant en Informatique et Réseaux (BTS CIEL)</p>
+        <div class="header-container">
+            <h1>Abdalah BENARICHA</h1>
+            <div class="subtitle">Technicien Informatique & Réseaux</div>
+            <div class="contact-bar">
+                <div class="contact-item">📍 Marseille, France</div>
+                <div class="contact-item">📞 <a href="tel:+33781308238">+33 7 81 30 82 38</a></div>
+                <div class="contact-item">📧 <a href="mailto:Abdbenaricha@hotmail.com">Abdbenaricha@hotmail.com</a></div>
+                <div class="contact-item">🚗 Permis B (Véhiculé)</div>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- Colonne Gauche -->
-        <aside>
-            <section class="contact-info">
-                <h2>Contact</h2>
-                <p>📞 +33 7 81 30 82 38</p>
-                <p>📧 Abdbenaricha@hotmail.com</p>
-                <p>📍 Marseille, France</p>
-                <p>🚗 Permis B, véhiculé</p>
+    <div class="main-container">
+        
+        <!-- Colonne Principale (Gauche) -->
+        <main>
+            <!-- Profil -->
+            <section>
+                <h2>Profil Professionnel</h2>
+                <p class="profile-text">
+                    Actuellement en 1<sup>re</sup> année de BTS CIEL, je suis à la recherche d'une <strong>alternance pour ma 2<sup>e</sup> année</strong> au sein du groupe <strong>SNT Suma</strong>. Fort d'une expérience concrète en tant que technicien informatique en CDD chez SUMA, je souhaite apporter mon expertise, poursuivre ma montée en compétences et contribuer à la gestion d'infrastructures, au support utilisateur et aux projets de cybersécurité du réseau.
+                </p>
             </section>
 
+            <!-- Expériences Professionnelles -->
+            <section>
+                <h2>Expériences Professionnelles</h2>
+                
+                <div class="timeline-item">
+                    <div class="job-title">Technicien Informatique (CDD)</div>
+                    <div class="job-company">SNT Suma</div>
+                    <div class="job-date">Actuellement en poste</div>
+                    <ul class="job-details">
+                        <li>Support Microsoft 365, Azure, Intune et Entra ID pour les utilisateurs.</li>
+                        <li>Assistance et administration réseau : support sur la configuration des switches, routeurs, serveurs, VPN et VLAN.</li>
+                        <li>Maintenance du parc informatique, gestion des accès et traitement des incidents.</li>
+                        <li>Application des consignes de sécurité, gestion des identités (IAM) et conformité du parc.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Employé Polyvalent</div>
+                    <div class="job-company">Decathlon — Ensuès-la-Redonne</div>
+                    <div class="job-date">Février 2025 – Août 2025</div>
+                    <ul class="job-details">
+                        <li>Utilisation du logiciel de gestion AS400.</li>
+                        <li>Planification de l'activité des équipes et manutention (Permis CACES 3).</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Vendeur & Développement Web</div>
+                    <div class="job-company">Decathlon</div>
+                    <div class="job-date">Décembre 2024 – Août 2025</div>
+                    <ul class="job-details">
+                        <li>Création de site web et gestion des réseaux sociaux.</li>
+                        <li>Gestion de caisse et suivi d'inventaire.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Mentor</div>
+                    <div class="job-company">Association Camplus</div>
+                    <div class="job-date">Janvier 2022 – Février 2023</div>
+                    <ul class="job-details">
+                        <li>Accompagnement de collégiens pour le brevet, suivi pédagogique et travail d'équipe.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Colonne Latérale (Droite) -->
+        <aside>
+            <!-- Compétences -->
             <section>
                 <h2>Compétences</h2>
-                <span class="badge">Esprit d'équipe</span>
-                <span class="badge">Curieux</span>
-                <span class="badge">Polyvalent</span>
-                <span class="badge">Créativité</span>
+
+                <div class="skill-group">
+                    <div class="skill-category">Réseaux & VoIP</div>
+                    <div class="tags">
+                        <span class="tag">Protocoles L2/L3</span>
+                        <span class="tag">TCP/IP</span>
+                        <span class="tag">DNS / DHCP</span>
+                        <span class="tag">VPN</span>
+                        <span class="tag">VLAN</span>
+                        <span class="tag">XIVO (VoIP)</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-category">Système & Cloud Microsoft</div>
+                    <div class="tags">
+                        <span class="tag">Entra ID</span>
+                        <span class="tag">Exchange</span>
+                        <span class="tag">Intune</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Microsoft Graph</span>
+                        <span class="tag">Windows Server</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">GPO</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-category">Linux, Dev & Scripting</div>
+                    <div class="tags">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-category">Outils & Cybersécurité</div>
+                    <div class="tags">
+                        <span class="tag">GLPI</span>
+                        <span class="tag">Freshservice</span>
+                        <span class="tag">SentinelOne</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">VMware</span>
+                        <span class="tag">Cisco Packet Tracer</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Audit Secu</span>
+                        <span class="tag">RGPD / IAM</span>
+                        <span class="tag">Palo Alto</span>
+                        <span class="tag">Fortinet</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formations -->
+            <section>
+                <h2>Formation</h2>
                 
-                <h3>Langues</h3>
-                <p>Anglais : B2<br>Espagnol : A1</p>
+                <div class="edu-item">
+                    <div class="edu-date">2025 – 2027</div>
+                    <div class="edu-degree">BTS CIEL</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Cybersécurité, Informatique et Réseaux, Électronique</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-date">2024 – 2025</div>
+                    <div class="edu-degree">Licence Informatique</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-date">2022 – 2023</div>
+                    <div class="edu-degree">Diplôme Coding Club</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Epitech</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-date">2021 – 2024</div>
+                    <div class="edu-degree">Baccalauréat Général Scientifique</div>
+                </div>
             </section>
 
+            <!-- Langues -->
             <section>
-                <h2>Logiciels & Tech</h2>
-                <div class="badge">Python</div>
-                <div class="badge">HTML/CSS</div>
-                <div class="badge">Java / C</div>
-                <div class="badge">VS Code</div>
-                <div class="badge">Microsoft 365</div>
-                <div class="badge">Cisco Packet Tracer</div>
-                <div class="badge">Unity / Roblox Studio</div>
-            </section>
-
-            <section>
-                <h2>Loisirs</h2>
-                <ul>
-                    <li>Développement informatique</li>
-                    <li>Badminton</li>
-                    <li>Randonnée</li>
-                    <li>Voyage</li>
+                <h2>Langues</h2>
+                <ul class="lang-list">
+                    <li class="lang-item">
+                        <span><strong>Français</strong></span>
+                        <span style="color: var(--text-muted);">Natif</span>
+                    </li>
+                    <li class="lang-item">
+                        <span><strong>Anglais</strong></span>
+                        <span style="color: var(--accent); font-weight: 600;">B2</span>
+                    </li>
                 </ul>
             </section>
         </aside>
 
-        <!-- Colonne Droite -->
-        <main>
-            <section>
-                <h2>Profil Professionnel</h2>
-                <p>Étudiant en 1re année de BTS CIEL, je recherche un stage de 6 à 8 semaines à partir du <strong>18 mai 2026</strong>. Passionné par la cybersécurité, le développement et l'électronique, je possède des bases solides en programmation et maintenance informatique.</p>
-            </section>
-
-            <section>
-                <h2>Expériences Professionnelles</h2>
-                
-                <div class="exp-item">
-                    <span class="date">Février - Août 2025</span>
-                    <span class="job-title">Employé Polyvalent - DECATHLON (Ensuès-la-Redonne)</span>
-                    <ul>
-                        <li>Utilisation du logiciel AS400</li>
-                        <li>Planification de l'activité des équipes</li>
-                        <li>Utilisation de chariot de manutention (CACES 3)</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <span class="date">Décembre 2024 - Août 2025</span>
-                    <span class="job-title">Vendeur</span>
-                    <ul>
-                        <li>Gestion de caisse et inventaire</li>
-                        <li>Création de site web et gestion des réseaux sociaux</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <span class="date">Janvier 2022 - Février 2023</span>
-                    <span class="job-title">Stage Mentorat - Association CAMPLUS</span>
-                    <ul>
-                        <li>Formation au mentorat</li>
-                        <li>Suivi scolaire d'un collégien pour le brevet</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>Formations</h2>
-                <div class="edu-item">
-                    <span class="date">2025 - 2027</span>
-                    <strong>BTS CIEL (Informatique et réseaux)</strong>
-                </div>
-                <div class="edu-item">
-                    <span class="date">2024 - 2025</span>
-                    <strong>Licence Informatique</strong>
-                </div>
-                <div class="edu-item">
-                    <span class="date">2021 - 2024</span>
-                    <strong>Baccalauréat Général Scientifique</strong>
-                </div>
-                <div class="edu-item">
-                    <span class="date">2022 - 2023</span>
-                    <strong>Coding Club - EPITECH</strong>
-                </div>
-            </section>
-        </main>
     </div>
 
     <footer>
-        <p>&copy; BENARICHA Abdalah - Recherche de stage Mai 2026</p>
+        <p>&copy; 2026 Abdalah BENARICHA — Technicien Informatique & Réseaux</p>
     </footer>
 
 </body>
